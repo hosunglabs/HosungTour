@@ -1,3 +1,39 @@
-<h1> HosungTour </h1>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+<title>HosungTour</title>
+</head>
+<body>
 
-<p> ㅎ환영합니다ㅎ </p>
+<h1>Welcome to HosungTour</h1>
+
+<p>
+호성투어 웹페이지 백엔드 작업 중입니다.
+</p>
+
+<ul>
+<li>http://localhost:8000/blog/ 주소로 접속.</li>
+<li>Customer Obsession</li>
+</ul>
+
+</body>
+</html>
+
+<form action="" method="get">
+  <input type="text" name='q' value="{{ q }}" />
+  <input type="submit" value="검색" />
+</form>
+<ul>
+  {% for post in post_list %}
+  <li>
+    {{ post.id }}
+    <a href="/blog/{{ post.id }}/">
+    {{ post.title }}
+  </a>
+    <small>by {{ post.author }}</small>
+    <small>at {{ post.updated_at }}</small>
+  </li>
+{% endfor %}
+</ul>
